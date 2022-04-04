@@ -1,0 +1,917 @@
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rishika/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rishika/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rishika/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rishika/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+plugins=(git
+	 docker
+	 docker-compose
+	 zsh-syntax-highlighting
+	 zsh-autosuggestions
+	 vscode
+	 python
+	 themes
+	 kubectl
+	 history
+	 emoji
+	 )
+
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git config --global user.email "rishikajagadesswaran@gmail.com"
+
+ git config --global user.name "rishika2910"
+
+
+ https://png.pngtree.com/png-vector/20190114/ourmid/pngtree-abstract-colorful-logo-3d-modern-icon-concept-png-image_313248.jpg
+
+
+# TACT's alias - Ubuntu
+alias gad="git add ."
+alias gish="git push"
+alias gp="git pull"
+alias gush="/home/xyzabc/gitmagic/gu.sh"
+alias cp36="conda activate py37"
+alias cact="conda activate"
+alias clist="conda env list"
+alias py="python"
+alias gimmit="git commit -m "
+alias soume="source ~/.~/.bashrc"
+alias gh="gush"
+alias wip="curl https://ifconfig.me/ -w '\n'"
+alias ip="curl https://ifconfig.me/ -w '\n'"
+alias bashing="sudo vi ~/.bashrc"
+alias bashin="sudo vi ~/.bashrc"
+alias bashcat="cat ~/.bashrc"
+alias pipi="pip install -r requirements.txt"
+alias sshb="ssh-add -K ~/.ssh/id_rsa" # ssh base (for emergency purpose only)
+
+
+/home/rishika/tact/housilon/housilon-frontend/app.py
+
+-------------------------------------------------------------------------------------------
+
+Docker Commands
+
+# docker login with username
+docker login --username=rajacsp
+Ref:
+https://stackoverflow.com/questions/34434231/how-to-specify-username-and-password-upon-docker-push
+
+
+docker —version
+
+docker info
+
+## List Docker images
+
+docker image ls
+
+docker container ls -all
+
+## List Docker containers (running, all, all in quiet mode)
+docker container ls
+docker container ls --all
+docker container ls -aq
+
+# Stop the container
+docker stop orb
+
+
+
+docker ps -a
+docker images
+
+# remove docker container
+docker rm abcd
+
+# remove docker image
+docker rmi abcd
+
+# docker run with detached
+docker run -d abcd
+
+# restart if exists
+docker run --restart=always redis
+
+# docker commit
+docker commit --change "ENV DEBUG true" c3f279d17e0a  svendowideit/testimage:version3
+
+# run the static site
+docker run -d -P seqvence/static-site
+
+# verify the running site
+http://localhost:32769/
+
+Ref:
+https://www.youtube.com/watch?v=lNkVxDSRo7M
+
+# Start the existing container
+docker start 
+
+# docker run Ubuntu
+docker run -it --name ubuntu ubuntu:xenial bash
+
+
+# start existing ubuntu
+docker start ubuntu
+
+# get into bash
+docker exec -it ubuntu bash
+
+
+# Install OracleDB
+docker run -d -it --name ortest store/oracle/database-enterprise:12.2.0.1
+
+docker exec -it ortest bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
+
+More:
+https://hub.docker.com/u/rajacsp/content/sub-19df1a00-1ae1-4229-8fb6-96dc2b4703bf
+
+
+# Connect from outside container:
+docker run -d -it --name ortest -P store/oracle/database-enterprise:12.2.0.1
+
+# Check Oracle logs in docker
+docker logs ortest
+
+# Start DB as DBA
+ docker exec -it ortest bash -c "source /home/oracle/.bashrc; sqlplus / as sysdba"
+
+
+# dockering Flask
+https://runnable.com/docker/python/dockerize-your-flask-application
+
+# Build docker
+docker build -t my_docker_flask:latest .
+
+# run the docker flask image
+docker run -d -p 4000:5000 rajacsp/flaskmath:2
+
+# Docker basic app
+https://docs.docker.com/get-started/
+
+how to save a docker container as an image?
+https://docs.docker.com/engine/reference/commandline/commit/#commit-a-container-with-new-cmd-and-expose-instructions
+
+# run the public docker
+docker run -p 4000:80 rajacsp/flaskcsp:p2
+
+# Public docker:
+https://hub.docker.com/r/jcdemo/flaskapp/dockerfile
+
+# Clear docker
+docker system prune -a
+
+# Clear docker volumes
+docker system prune -a --volumes
+
+# To stop all the running containers
+docker stop $(docker ps -q) 
+
+# Kube pod details
+kubectl get po
+
+kubectl logs bapi-be-6db7bf6f95-bshhk
+
+# Container life cycle
+https://medium.com/@nagarwal/lifecycle-of-docker-container-d2da9f85959
+
+# Docker copy
+docker ps
+
+docker cp foo.txt 72ca2488b353:/foo.txt
+
+docker cp 72ca2488b353:/foo.txt foo.txt
+
+https://www.shellhacks.com/docker-cp-command-copy-file-to-from-container/
+
+Docker commit and push
+docker pull ubuntu
+docker run --name csp-lamp-server -it ubuntu:latest bash
+apt-get update
+apt-get install lamp-server^
+docker commit -m "Added LAMP Server" -a "NAME" csp-lamp-server USER/test-lamp-server:latest
+docker login
+docker push rajacsp/csp-lamp-server
+https://www.techrepublic.com/article/how-to-create-a-docker-image-and-push-it-to-docker-hub/
+
+
+Create simple Flask Image:
+http://containertutorials.com/docker-compose/flask-simple-app.html
+
+Docker run vs exec:
+https://medium.com/the-code-review/docker-run-vs-exec-deep-dive-into-their-differences-19a1041735a3
+
+Docker logs:
+Docker logs 
+
+
+
+docker run -d -it --name myflask -p 5002:5000 rajacsp/my_docker_flask:latest
+
+docker image inspect:
+docker image inspect 
+docker image inspect 5158108894a9
+https://docs.docker.com/engine/reference/commandline/image_inspect/
+
+
+Find ip of a docker container:
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
+-----------------------------------------------------------------------
+Docker fresh build and deploy:
+
+cd /Users/str-kwml0011/projects/docker-flask-reverse-string
+
+docker build -t flask-reverse-string:latest .
+
+# check your docker image
+docker images
+
+# check container
+docker ps
+
+# Run it
+docker run -d -p 5000:5000 flask-reverse-string:latest
+
+# Test
+curl http://127.0.0.1:5000/
+
+# tagging
+docker tag flask-reverse-string rajacsp/flask-reverse-string
+
+# Docker pruning
+docker container prune
+	https://docs.docker.com/config/pruning/
+
+
+Test:
+http://127.0.0.1:5000/reverse?name=Raja
+-----------------------------------------------------------------------
+
+Postgres:
+
+https://hub.docker.com/_/postgres?tab=tags
+
+docker run -d -it --name pg11 postgres:11
+docker run --name pg11 -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres:11
+
+docker exec -it pg11 bash
+
+psql -U postgres
+
+0.0.0.0
+
+psql -h 0.0.0.0 -p 5432 -U postgres
+
+CREATE ROLE raja WITH LOGIN PASSWORD 'raja';
+ALTER ROLE raja CREATEDB;
+CREATE DATABASE raja;
+GRANT ALL PRIVILEGES ON DATABASE raja TO raja;
+\connect raja
+ALTER ROLE raja lOGIN;  
+
+
+CREATE DATABASE dbtest;
+GRANT ALL PRIVILEGES ON DATABASE dbtest TO postgres;
+
+CREATE DATABASE kapi;
+GRANT ALL PRIVILEGES ON DATABASE kapi TO postgres;
+
+ALTER DATABASE kapi RENAME TO kapi_backup;
+
+# change password
+ALTER USER postgres WITH PASSWORD 'postgres';
+
+docker exec -it pg11 psql -U raja
+
+CREATE TABLE one (
+ name INT 
+);
+
+INSERT INTO one (name) VALUES ("one");
+
+INSERT INTO one VALUES ("one");
+
+TRUNCATE TABLE "KA_TRASH_METER" RESTART IDENTITY;
+
+sudo docker run --rm -P -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD="1234" --name pg postgres:alpine
+
+# view dbs
+\l
+
+#
+connct to db
+\connect dbname
+\c dbname
+
+#
+view tabels
+\dt
+
+#
+change password
+
+
+
+
+-----------------------------------------------------------------------
+
+docker run --name pg11 -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres
+docker exec -it pg11 bash
+
+psql -h 0.0.0.0 -p 5432 -U postgres
+
+psql -h 165.225.36.90 -p 5432 -U postgres
+psql -h 120.0.0.1 -p 5432 -U postgres
+psql -h localhost -p 5432 -U postgres
+
+172.17.0.3
+psql -h 172.17.0.3 -p 5432 -U postgres
+
+psql postgresql://postgres:root@localhost:5432/postgres
+
+Connecting postgres:
+https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside
+
+
+psql -h localhost  -U bob
+
+Posgres issues:
+https://github.com/docker-library/postgres/issues/41
+
+
+Feature: ValueType:
+Time
+TimePair
+Value Pair
+XML
+Year
+Year Pair
+
+Feature Value:
+value, name, sorting
+domain, 2nd domain
+
+Value list (String)
+global.properties
+value-list-string = Value list (String)
+
+
+Java synthetic class:
+https://javapapers.com/core-java/java-synthetic-class-method-field/
+
+
+Events:
+ID
+
+Simple product:
+https://cms-dev.kwikee.com/Kwikee/product/3841108
+GTIN: 00013000002691
+ID: 3841108
+
+
+
+# Find OS info in Docker
+uname -a
+
+sample:
+Linux d95c0096bc3b 4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018 x86_64 GNU/Linux
+
+Distribution Engine:
+https://github.com/KwikeeLabs/distribution-engine
+
+
+
+--------
+Docker Distribution Engine Installation:
+
+Steps to Setup the Distribution Engine on your VM:
+
+Login to the VM
+Install Docker: https://docs.docker.com/engine/installation/linux/ubuntulinux/ a. Refer to the Prerequisites, Install and Optional Configurations: Configure Docker to Start on Boot sections of the documentation b. Follow the associated Ubuntu version sections of the documentation c. To verify which version of Ubuntu being used, enter this command in the prompt: lsb_release -a
+Install Docker Compose: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04 a. Refer to "Step 2 - Installing Docker Compose"
+Go to your personal project directory i.e. /home/(username)/project
+Copy the kwikee.zip package to this directory
+sudo apt-get install unzip
+Unzip the package
+Go inside the kwikee folder
+sudo docker-compose up -d postgres rabbitmq
+sudo apt-get install postgresql-client-common postgresql-client
+psql -U kwikee -W -d kwikee -h localhost < kwikee.sql
+Enter password for kwikee user: kwikee
+sudo docker-compose up -d api worker
+sudo docker-compose exec worker python manage.py init_db
+sudo docker-compose up -d nginx
+--------/
+
+
+-----------------
+Influx DB:
+
+https://hub.docker.com/_/influxdb
+
+docker run --name=influxdb -d -p 8086:8086 influxdb
+
+docker exec -it influxdb influx
+
+Getting started with InfluxDB
+https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/
+
+https://www.influxdata.com/blog/getting-started-python-influxdb/
+
+https://coderwall.com/p/fg18jq/getting-started-influxdb-grafana-docker
+
+https://influxdb-python.readthedocs.io/en/latest/examples.html
+-----------------/
+
+----------------------------------------------------------------------------------------------
+
+MINIO
+
+# installation code for minio
+mkdir software
+
+cd software
+
+mkdir min.io
+
+cd minio 
+
+wget https://dl.minio.io/server/minio/release/linux-amd64/minio
+
+chmod +x minio 
+
+sudo mv ./minio /usr/games/minio
+
+sudo apt update
+
+minio --version
+
+#run command
+MINIO_ROOT_USER=rishika29 MINIO_ROOT_PASSWORD=rishika@03 minio server ./data{1...5} --console-address :9001
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+aws cloud application 
+
+EC2 (mentor for the applications in aws)
+
+
+
+
+#security group
+  9000-minio server
+  9001- minio client
+  flask app- 3012
+
+  review & launch
+
+  ----
+
+ after running
+
+ go to connect 
+
+ copy the command in terminal and enter
+
+ ----
+
+ miniconda installation
+
+ ----
+
+ #git clone the repo
+ clone the html if u didnt add ssh key
+
+ if not setup ssh key 
+ ( the commands are in wikki tact)
+
+ and git clone the ssh key
+
+----
+
+ #install minio
+
+ create software folder
+ and enter the command
+
+ 
+EC2 DASH
+
+launch instance
+
+
+http://0.0.0.0:5041/ 
+
+-------------
+
+fastapi
+
+#install code:
+
+pip install fastapi
+pip install "uvicorn[standard]"
+pip install hypercorn
+
+
+#run code :
+
+hypercorn main:app --reload 
+uvicorn main:app --reload
+
+--------------------------------------------------------------------------------------------------------
+REACT NATIVE
+
+## installing node.js
+
+https://stackoverflow.com/questions/63312642/how-to-install-node-tar-xz-file-in-linux
+
+sudo apt install nodejs
+
+node -- version
+
+## installing npm
+
+sudo apt install npm
+
+npm -- version
+
+sudo npm -g install create-react-app
+
+create-react-app --version
+
+create-react-app test-app
+
+* * *
+
+npm start
+Starts the development server.
+
+npm run build
+Bundles the app into static files for production.
+
+npm test
+Starts the test runner.
+
+npm run eject
+Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can't go back!
+
+We suggest that you begin by typing:
+
+cd test-app
+npm start
+
+* * *
+
+This usually happens because your environment has changed since running `npm install`.
+Run `npm rebuild node-sass` to download the binding for your current environment.
+
+npm rebuild node-sass
+
+* * *
+
+* * *
+
+watchman installation
+
+cd watchman
+git checkout v4.9.0
+sudo apt-get install -y autoconf automake build-essential python-dev libssl-dev libtool
+./autogen.sh
+./configure --without-python --without-pcre --enable-lenient
+make
+sudo make install
+
+## to run react native
+
+npx react-native run-android
+
+## to open android studio
+
+cd android-studio/bin
+./studio.sh
+
+* * *
+
+* * *
+
+## using expo-cli
+
+sudo npm install --global expo-cli
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
+- cd test
+- npm start # you can open iOS, Android, or web from here, or run them directly with the commands below.
+- npm run android
+- npm run ios # require
+
+npm dedupe
+npm list react-native-safe-area-context
+npm run android
+
+
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs 
+
+(for higher version of node js)
+
+node --version
+
+--------------------------------------------------------------------------------------------------
+
+--------------------
+FPR POD
+FPR Junior
+--------------------
+	Junior - 1-3 max individuals
+	Prize: 25K
+	Come up with an Idea
+	Create an app
+	Publish it
+	Bring more likes and comments
+	Based on the comment, likes you will get score
+	More score, you will win 
+	Post daily updates/progress on LinkedIn - (I)
+	
+Age limit:
+	13 - 16
+	
+What you can access?
+	Developer Resources by using Credits
+		Level:
+		L1 - 200 Credits/Hr
+		L2 - 500 Credits/Hr
+		L3 - 1000 Credits/Hr
+	
+	Cloud Resource by credits
+		AWS:
+			1 Hr = 100 Credits
+		Azure
+			1 Hr = 150 Credits
+
+		
+	Tact Credits
+	1INR = 29.99 Tact Credits
+		
+
+Winners get:
+	25K
+
+Other prizes:
+	Research fund worth of 10K 
+
+Benefits:
+
+- Certificates: Till week 4 participant(S)
+- Intern Opportunity-(I)
+- Weekly random gift card (Rs 100-200)-(R)
+- Bonus: Technical Meme(P)
+- Access video course - 50 credits(Sir)
+- Technical understanding - extra credits(S)
+- Random challenges(P)
+- Weekly AMA for students(A)
+- Error fix (I)
+- Just Google (P)
+- Group discussions (R)
+- If students Code - extra credits (S)
+- Idea Pitch(A)
+- Share experience in Youtube(A)
+
+Entry Fee:
+	1000 INR
+	
+	800 INR will be converted as Tact Credits where you can use them during the program. You can use your existing credits as well. 
+	23992 Tact Credits
+		
+		Sample resource usage options:
+			Option 1:
+				L1 * 2 * 20 Hours 	= 200 * 2 * 20 	= 8000
+				L2 * 1 * 10 Hours 	= 500 * 1 * 10 	= 5000
+				AWS * 24 Hours 		= 100 * 24 		= 2400
+				Total Credits: 15400 Tact Credits
+			 
+	
+Event Duration:
+5 Weeks
+
+Week1:
+	Idea approval
+
+Week2:
+	MVP
+	
+Week3:
+	Scalable App
+
+Week4:
+	Publish
+	
+Week5:
+	Post in social media, etc to get likes
+	Poll in LinkedIn page
+	
+	
+How do we evaluate?
+	GeoPower Likes
+	Geo + Power
+		If Local entrepreneur likes, you will get
+			1000 points
+		If Senior Manager likes, you will get 
+			600 points
+		
+			
+Guests:
+	Suresh Sambandham?
+	Startup Founders?
+	Tech based Founders
+	
+	
+Sample page:
+
+--------------------/
+
+Ideas:
+
+RilVille
+
+SecretAdmirer
+
+StandupYov
+
+--------------------/
+
+Ana, Ishita,Prakash - March 1 - 30
+
+Rishika, Snekha - April 
+
+To-Do
+------
+
+- likes page (social media links)	- I
+- leaderboard : weekly progress - I
+- mobile app - R
+
+-------------------------------------------------/
+
+FPR junior name : Junior + Dreamer
+
+
+Junior :
+
+juniori -- Finish 
+Juniorin -- German
+Sóisear -- Irish
+Ciwantir -- kurdish
+Yaryar -- somali
+
+Dreamer :
+
+Drömmare -- swedish
+Soñadora -- spanish
+hayalperest -- turkish
+Sonhadora -- portuguese
+
+// https://www.nameslook.com/cidora/
+
+Ciwantir + Soñadora = Cidora  (Skill, Researcher, Mysterious)
+
+juniori + Drömmare = Jundro 
+
+Soñadora + Juniorin = Sonarin 
+
+juniori + Soñadora = Jundora  
+
+-------------------------------------------------------------
+
+Mythraki languages :
+
+1) German
+2) Spanish
+3) French
+4) Italian 
+5) Russian
+6) Scottish
+7) Norweigan
+8) Dutch
+9) Finnish
+10) Portuguese
+11) Irish
+12) Icelandic
+13) Danish
+
+
+
+
+Puzzle one:
+Dont look at your windows
+This answer contains 3 letters for the master key.
+
+P1 - microsoft   
+
+
+
+simple flask app returning a dict in the format. 
+{
+        "city"   : "Chennai",
+        "state"  : "Tamilnadu",
+        "population": "7.8 million"    
+    },
+    {
+        "city"   : "Toronto",
+        "state"  : "Ontario",
+        "population" : "6.8 million"
+    }
+    
+API should be called on Postman
+
+
+
+https://tact-filedropper.herokuapp.com/download
+
+download the json file here
+
+with path variable return a dict consists of 
+state and population of city supplied through parameter
+
+Sample url:
+http://0.0.0.0:5000/toronto
+	
+	should return a dict
+
+
+
+only 5 mins more!!!!
+
+Puzzle three:
+This ship changed the entire world's market. 
+It contains 2 letters for the master key. 
+microsoft   -3
+
+Iceland  - 1
+
+evergreen - 2 letters
+
+------------------------------------------------------------------------
+
+ var featuredPropertyList = [];
+
+    for(var i = 0; i < 10; i++){
+        c_dict = {
+            id: '1',
+            // properyImage: require('../../assets/images/house/house_1.jpg'),
+            propertyName: 'Sky View House',
+            propertyAddress: 'Opera Street, New York',
+            propertyAmount: '360000',
+            isFavourit: false,
+        }
+        featuredPropertyList.push(c_dict);
+    }
+
+    console.log(featuredPropertyList);
+
+------------------------------------------------------------------------------
+
+javascript
+
+java loop for
+
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+
+------------------------------------------------------------------------------
+Title, Introduction, Problem Statement, Objectives, Proposed Work Flow, Explanation/Requirements)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+Access to XMLHttpRequest at 'http://54.205.76.109:5003/' from origin 'http://localhost:19006' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+App.js:28          GET http://54.205.76.109:5003/ net::ERR_FAILED 200

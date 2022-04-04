@@ -1,0 +1,96 @@
+## installing node.js
+
+https://stackoverflow.com/questions/63312642/how-to-install-node-tar-xz-file-in-linux
+
+sudo apt install nodejs
+
+node -- version
+
+## installing npm
+
+sudo apt install npm
+
+npm -- version
+
+sudo npm -g install create-react-app
+
+create-react-app --version
+
+create-react-app test-app
+
+* * *
+
+npm start
+Starts the development server.
+
+npm run build
+Bundles the app into static files for production.
+
+npm test
+Starts the test runner.
+
+npm run eject
+Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can't go back!
+
+We suggest that you begin by typing:
+
+cd test-app
+npm start
+
+* * *
+
+This usually happens because your environment has changed since running `npm install`.
+Run `npm rebuild node-sass` to download the binding for your current environment.
+
+npm rebuild node-sass
+
+* * *
+
+* * *
+
+watchman installation
+
+cd watchman
+git checkout v4.9.0
+sudo apt-get install -y autoconf automake build-essential python-dev libssl-dev libtool
+./autogen.sh
+./configure --without-python --without-pcre --enable-lenient
+make
+sudo make install
+
+## to run react native
+
+npx react-native run-android
+
+## to open android studio
+
+cd android-studio/bin
+./studio.sh
+
+* * *
+
+* * *
+
+## using expo-cli
+
+sudo npm install --global expo-cli
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
+- cd test
+- npm start # you can open iOS, Android, or web from here, or run them directly with the commands below.
+- npm run android
+- npm run ios # require
+
+npm dedupe
+npm list react-native-safe-area-context
+npm run android
+
+
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs 
+
+(for higher version of node js)
+
+node --version
